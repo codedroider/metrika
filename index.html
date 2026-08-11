@@ -8,6 +8,17 @@
         line-height: 0 !important;
     }
 </style>
+<script>
+  try {
+    if (window.parent && window.parent.location) {
+      const parentPath = window.parent.location.pathname.replace(/^\/|\/$/g, ''); 
+      const siteName = parentPath || 'root';
+      window.history.replaceState(null, '', window.location.pathname + '?from=' + siteName);
+    }
+  } catch (e) {
+      console.log('')
+  }
+</script>
 
 <!-- Yandex.Metrika informer -->
 <a href="https://metrika.yandex.ru/stat/?id=111495785&amp;from=informer" target="_blank" rel="nofollow">
